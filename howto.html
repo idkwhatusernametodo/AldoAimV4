@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <title>AldoAim | How to Use</title>
+    <style>
+        /* --- RESET & BASICS --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- BACKGROUND GLOW --- */
+        .glow-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(88, 101, 242, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.08), transparent 25%);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo { font-weight: 800; font-size: 1.5rem; display: flex; align-items: center; gap: 12px; }
+        .text-blurple { color: #5865F2; }
+        .nav-links a { color: #9ca3af; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.2s; }
+        .nav-links a:hover { color: white; }
+
+        /* --- HEADER --- */
+        .page-header {
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+        h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; }
+        .subtitle { color: #9ca3af; max-width: 600px; margin: 0 auto; }
+
+        /* --- TIMELINE SECTION --- */
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        /* The Vertical Line */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50px; /* Adjust for mobile */
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #5865F2 0%, rgba(88, 101, 242, 0.1) 100%);
+            z-index: 0;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            margin-left: 80px; /* Make space for line */
+            position: relative;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s ease;
+        }
+        
+        .step-card:hover { transform: translateX(5px); border-color: rgba(88, 101, 242, 0.3); }
+
+        /* The Number Bubble */
+        .step-number {
+            position: absolute;
+            left: -95px; /* Position on the line */
+            top: 25px;
+            width: 50px;
+            height: 50px;
+            background: #050505;
+            border: 2px solid #5865F2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #5865F2;
+            z-index: 1;
+            box-shadow: 0 0 15px rgba(88, 101, 242, 0.2);
+        }
+
+        .step-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+        .step-desc { color: #9ca3af; margin-bottom: 15px; }
+        
+        /* Code Block Style */
+        .code-box {
+            background: #000;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #2ecc71;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow-x: auto;
+        }
+        .copy-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .copy-btn:hover { background: #5865F2; }
+
+        /* --- TROUBLESHOOTING --- */
+        .troubleshoot {
+            max-width: 800px;
+            margin: 0 auto 100px;
+            padding: 20px;
+        }
+        .warn-card {
+            background: rgba(231, 76, 60, 0.1);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .warn-icon { font-size: 2rem; }
+
+        /* Mobile Fix */
+        @media (max-width: 768px) {
+            .timeline-container::before { left: 20px; }
+            .step-card { margin-left: 50px; padding: 20px; }
+            .step-number { left: -65px; width: 40px; height: 40px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="logo.svg" style="height: 35px; border-radius: 5px;">
+            Aldo<span class="text-blurple">Aim</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="discord.html">Support</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="page-header">
+        <h1>Installation Guide</h1>
+        <p class="subtitle">Follow these steps exactly to ensure the script runs without errors.</p>
+    </div>
+
+    <!-- Timeline Steps -->
+    <div class="timeline-container">
+        
+        <!-- STEP 1 -->
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Prepare Your Executor</h3>
+            <p class="step-desc">
+                Make sure you have a supported executor installed. We recommend 
+                <strong style="color:white;">Xeno</strong>, 
+                <strong style="color:white;">Wave</strong>, or 
+                <strong style="color:white;">Bunni</strong>.
+            </p>
+            <div class="warn-card" style="padding: 10px; font-size: 0.9rem;">
+                ⚠️ Note: Most paid executors might not work as well since I have no way to test them.
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Copy the Script</h3>
+            <p class="step-desc">Click the copy button below to copy the latest loadstring.</p>
+            <div class="code-box">
+                <button class="copy-btn" onclick="copyCode()">COPY</button>
+                <span id="script-code">loadstring(game:HttpGet("https://raw.githubusercontent.com/idkwhatusernametodo/AldoAims/refs/heads/main/Arsenal.lua"))()</span>
+            </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Inject & Execute</h3>
+            <p class="step-desc">
+                1. Open Roblox and join a game.<br>
+                2. Click the <strong>Inject</strong> (or Attach) button on your executor.<br>
+                3. Paste the script into the text box and click <strong>Execute</strong>.
+            </p>
+        </div>
+
+
+    <script>
+        function copyCode() {
+            var codeText = document.getElementById("script-code").innerText;
+            navigator.clipboard.writeText(codeText);
+            alert("Script copied to clipboard!");
+        }
+    </script>
+
+</body>
+</html>
