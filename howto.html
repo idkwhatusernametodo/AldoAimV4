@@ -6,7 +6,6 @@
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     <title>AldoAim | How to Use</title>
     <style>
-        /* --- RESET & BASICS --- */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         body {
             background-color: #050505;
@@ -15,7 +14,6 @@
             line-height: 1.6;
         }
 
-        /* --- BACKGROUND GLOW --- */
         .glow-bg {
             position: fixed;
             top: 0; left: 0; width: 100vw; height: 100vh;
@@ -25,7 +23,6 @@
                 radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.08), transparent 25%);
         }
 
-        /* --- NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -39,7 +36,6 @@
         .nav-links a { color: #9ca3af; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.2s; }
         .nav-links a:hover { color: white; }
 
-        /* --- HEADER --- */
         .page-header {
             text-align: center;
             padding: 80px 20px 60px;
@@ -47,7 +43,6 @@
         h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 15px; }
         .subtitle { color: #9ca3af; max-width: 600px; margin: 0 auto; }
 
-        /* --- TIMELINE SECTION --- */
         .timeline-container {
             max-width: 800px;
             margin: 0 auto 100px;
@@ -55,11 +50,10 @@
             position: relative;
         }
         
-        /* The Vertical Line */
         .timeline-container::before {
             content: '';
             position: absolute;
-            left: 50px; /* Adjust for mobile */
+            left: 50px;
             top: 0;
             bottom: 0;
             width: 2px;
@@ -73,7 +67,7 @@
             padding: 30px;
             border-radius: 16px;
             margin-bottom: 40px;
-            margin-left: 80px; /* Make space for line */
+            margin-left: 80px; 
             position: relative;
             backdrop-filter: blur(10px);
             transition: transform 0.2s ease;
@@ -81,10 +75,9 @@
         
         .step-card:hover { transform: translateX(5px); border-color: rgba(88, 101, 242, 0.3); }
 
-        /* The Number Bubble */
         .step-number {
             position: absolute;
-            left: -95px; /* Position on the line */
+            left: -95px;
             top: 25px;
             width: 50px;
             height: 50px;
@@ -104,7 +97,6 @@
         .step-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
         .step-desc { color: #9ca3af; margin-bottom: 15px; }
         
-        /* Code Block Style */
         .code-box {
             background: #000;
             padding: 15px;
@@ -130,7 +122,6 @@
         }
         .copy-btn:hover { background: #5865F2; }
 
-        /* --- TROUBLESHOOTING --- */
         .troubleshoot {
             max-width: 800px;
             margin: 0 auto 100px;
@@ -147,7 +138,7 @@
         }
         .warn-icon { font-size: 2rem; }
 
-        /* Mobile Fix */
+        /* fix for mobile */
         @media (max-width: 768px) {
             .timeline-container::before { left: 20px; }
             .step-card { margin-left: 50px; padding: 20px; }
@@ -159,7 +150,6 @@
 
     <div class="glow-bg"></div>
 
-    <!-- Navigation -->
     <nav>
         <div class="logo">
             <img src="https://raw.githubusercontent.com/idkwhatusernametodo/AldoAimV4/refs/heads/main/aldoaimpic.png" style="height: 70px; border-radius: 5px; margin-right: 0px;">
@@ -171,15 +161,12 @@
         </div>
     </nav>
 
-    <!-- Header -->
     <div class="page-header">
         <h1>How to use</h1>
     </div>
 
-    <!-- Timeline Steps -->
     <div class="timeline-container">
         
-        <!-- STEP 1 -->
         <div class="step-card">
             <div class="step-number">1</div>
             <h3 class="step-title">Prepare Your Executor</h3>
@@ -194,7 +181,6 @@
             </div>
         </div>
 
-        <!-- STEP 2 -->
         <div class="step-card">
             <div class="step-number">2</div>
             <h3 class="step-title">Copy the Script</h3>
@@ -205,7 +191,6 @@
             </div>
         </div>
 
-        <!-- STEP 3 -->
         <div class="step-card">
             <div class="step-number">3</div>
             <h3 class="step-title">Inject & Execute</h3>
@@ -228,4 +213,5 @@
 
 </body>
 </html>
+
 
